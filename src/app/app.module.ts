@@ -3,7 +3,11 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from "@angular/forms";
 import { AppComponent } from './app.component';
 import { IMqttMessage, MqttModule, IMqttServiceOptions } from "ngx-mqtt";
-//import { MatButtonModule } from '@angular/material/button';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import {MatNativeDateModule, MatRippleModule} from '@angular/material/core';
+import { MatInputModule } from '@angular/material/input';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //import { MatKeyboardModule } from 'angular-onscreen-material-keyboard';
 //import { NgxVirtualKeyboardModule }  from 'ngx-virtual-keyboard';
 //import { IKeyboardLayouts, keyboardLayouts, MAT_KEYBOARD_LAYOUTS, MatKeyboardModule } from '@ngx-material-keyboard/core';
@@ -37,10 +41,15 @@ const customLyouts: IKeyboardLayouts = {
     BrowserModule,
     FormsModule,
     //NgxVirtualKeyboardModule,
-        // Material modules
-    //MatButtonModule,
+        // Material modules  
+    MatButtonModule,
+    MatInputModule,
+    MatNativeDateModule,
+    //MatRippleModule,
+    MatDatepickerModule, 
     //MatKeyboardModule,
-    MqttModule.forRoot(MQTT_SERVICE_OPTIONS)
+    MqttModule.forRoot(MQTT_SERVICE_OPTIONS),
+    BrowserAnimationsModule
   ],
  providers: [],
  //   { provide: MAT_KEYBOARD_LAYOUTS, useValue: customLyouts }
